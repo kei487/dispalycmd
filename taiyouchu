@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+while true
+do clear
+echo -e "\e[33;40mただいま見学受付中\nお声がけください\e[0;40m"
+sleep 1
+done
