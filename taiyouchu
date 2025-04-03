@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # logo AA定義
-LOGO="logo"
+LOGO="logo2"
 
 while true;do
   clear
