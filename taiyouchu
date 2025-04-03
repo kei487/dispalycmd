@@ -1,7 +1,15 @@
 #!/usr/bin/bash
 
-while true
-do clear
-echo -e "\e[33;40mただいま見学受付中\nお声がけください\e[0;40m"
-sleep 1
+# logo AA定義
+LOGO="logo"
+
+while true;do
+  clear
+  echo -e "\e[33;40mただいま対応者在室中  お声がけください\e[0;40m"
+  sleep 1 
+  while read LINE;do
+    echo $LINE
+    sleep 0.4
+  done < ${LOGO}
+  sleep 3
 done
