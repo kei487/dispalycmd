@@ -5,7 +5,7 @@ LOGO="logo"
 
 while true;do
   clear
-  echo -e "\e[33;40m研究室見学大歓迎！\nただいま対応者在室中  お声がけください\e[0;40m"
+  echo -e "\e[33;40m研究室見学大歓迎！\nただいま対応者不在  またお越しください\e[0;40m"
   sleep 1 
   while read LINE;do
     echo $LINE
