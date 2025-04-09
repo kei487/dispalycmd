@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+
+while true; do
+    if read -t 2 -n 1 input; then
+        echo "キー入力あり: $input"
+    else
+        echo "何も入力されてない（0.1秒スキャン）"
+    fi
+    if [ $input = "a" ];then
+       sleep 1
+       echo you input : $input
+    fi
+done
+

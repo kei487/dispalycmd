@@ -1,0 +1,69 @@
+#!/usr/bin/bash
+
+# logo AA定義
+LOGO="msgs/msg_main"
+MSG="msgs/msg_zaisitu"
+TEXT="taiou"
+txt=$( cat txt/$TEXT )
+key="a"
+
+while true;do
+  times=$(date +%H) 
+  if [ $times -le 20 ] && [ $times -ge 8 ];then
+
+    if [ $key ];then
+      if [ $key = t ];then
+        TEXT="taiou"
+        MSG="msgs/msg_zaisitu"
+        echo "set t"
+      fi
+      if [ $key = f ];then
+        TEXT="fuzai"
+        MSG="msgs/msg_fuzai"
+        echo "set f"
+      fi
+      if [ $key = o ];then
+        TEXT="ohiru"
+        MSG="msgs/msg_ohiru"
+        echo "set o"
+      fi
+      if [ $key = r ];then
+        TEXT="riseki"
+        MSG="msgs/msg_riseki"
+        echo "set r"
+      fi
+      txt=$( cat txt/$TEXT )
+      key="a"
+    fi
+
+    sleep 1
+    clear
+    echo -e "\e[33;40m研究室見学大歓迎！" $txt "\e[0;40m"
+    sleep 1 
+
+    while read LINE;do
+      echo $LINE
+      sleep 0.3
+    done < ${LOGO}
+
+    if read -t 3 -n 1 input; then
+        key=$input
+        echo "キー入力あり: $input"
+    fi
+    sleep 1
+
+    clear
+    echo -e "\e[33;40m研究室見学大歓迎！" $txt "\e[0;40m"
+    sleep 1 
+
+    while read LINE;do
+      echo $LINE
+      sleep 0.3
+    done < ${MSG}
+    if read -t 3 -n 1 input; then
+        key=$input
+        echo "キー入力あり: $input"
+    fi
+
+  fi
+done
